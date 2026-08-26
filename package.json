@@ -1,0 +1,41 @@
+{
+  "name": "mcp-comex-brasil",
+  "version": "0.1.0",
+  "description": "MCP server para dados de comercio exterior do Brasil (Comex Stat / Receita Federal) — com as armadilhas do dataset verificadas e corrigidas na resposta",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "mcp-comex-brasil": "dist/index.js",
+    "comex-build": "dist/ingest/build.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "db:build": "node --experimental-sqlite dist/ingest/build.js",
+    "start": "node --experimental-sqlite dist/index.js",
+    "test": "node --experimental-sqlite --test \"dist/**/*.test.js\""
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "brasil",
+    "comex",
+    "comercio-exterior",
+    "comex-stat",
+    "aduana",
+    "trade-data",
+    "receita-federal"
+  ],
+  "author": "Luis Delfin",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "@types/node": "^22.10.0"
+  }
+}
