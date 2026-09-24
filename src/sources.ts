@@ -3,7 +3,9 @@
  *
  * Decisao de arquitetura: usamos o **CSV bulk**, nao a API.
  *   - CSV bulk (balanca.economia.gov.br)  -> estavel, sem rate-limit, dado completo
- *   - API (api-comexstat.mdic.gov.br)     -> rate-limit agressivo (HTTP 429), detail limitado
+ *   - API (api-comexstat.mdic.gov.br)     -> rate-limit agressivo (HTTP 429), detail limitado;
+ *                                            GET /general devolve 403, POST com o mesmo filtro funciona
+ *                                            (verificado 2026-09-24) — quem usar a API, use POST
  *   - Site (comexstat.mdic.gov.br)        -> HTTP 403
  *
  * Nada e redistribuido: o servidor baixa da fonte oficial na maquina do usuario.
